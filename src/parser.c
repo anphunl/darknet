@@ -301,6 +301,8 @@ layer parse_region(list *options, size_params params)
     l.class_scale = option_find_float(options, "class_scale", 1);
     l.bias_match = option_find_int_quiet(options, "bias_match",0);
 
+    l.temperature = option_find_float_quiet(options, "temperature", 1);
+
     char *tree_file = option_find_str(options, "tree", 0);
     if (tree_file) l.softmax_tree = read_tree(tree_file);
     char *map_file = option_find_str(options, "map", 0);
